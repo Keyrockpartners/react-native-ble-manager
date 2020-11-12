@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.facebook.react.bridge.ActivityEventListener;
@@ -101,7 +100,7 @@ class BleManager extends ReactContextBaseJavaModule implements ActivityEventList
 	}
 
 	public void sendEvent(String eventName,
-						  @Nullable WritableMap params) {
+						  WritableMap params) {
 		getReactApplicationContext()
 				.getJSModule(RCTNativeAppEventEmitter.class)
 				.emit(eventName, params);

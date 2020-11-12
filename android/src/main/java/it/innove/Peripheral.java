@@ -12,7 +12,6 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.Nullable;
 import android.util.Base64;
 import android.util.Log;
 
@@ -72,7 +71,7 @@ public class Peripheral extends BluetoothGattCallback {
 		this.reactContext = reactContext;
 	}
 
-	private void sendEvent(String eventName, @Nullable WritableMap params) {
+	private void sendEvent(String eventName, WritableMap params) {
 		reactContext
 				.getJSModule(RCTNativeAppEventEmitter.class)
 				.emit(eventName, params);
